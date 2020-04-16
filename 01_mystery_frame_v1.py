@@ -39,9 +39,10 @@ class Game:
 
         partner.lowstakes_button.config(state=DISABLED)
 
+
 # main routine
 if __name__ == "__main__":
     root = Tk()
     root.title("Mystery Box Game")
-    something = Start()
+    something = Start(root)
     root.mainloop()
