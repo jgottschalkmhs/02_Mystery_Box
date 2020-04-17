@@ -20,11 +20,11 @@ class Start:
         self.start_amount_entry = Entry(self.start_frame, font="Arial 16 bold")
         self.start_amount_entry.grid(row=1)
 
-        self.lowstakes_button = Button(self.to_game,
+        self.lowstakes_button = Button(self.start_frame,
                                        text="Low($5)",
                                        padx=10,
                                        pady=10,
-                                       command=self.to_game)
+                                       command=lambda: self.to_game(1))
         self.lowstakes_button.grid(row=2)
 
     def to_game(self, stakes):
@@ -43,5 +43,5 @@ class Game:
 if __name__ == "__main__":
     root = Tk()
     root.title("Mystery Box Game")
-    something = Start()
+    something = Start(root)
     root.mainloop()
