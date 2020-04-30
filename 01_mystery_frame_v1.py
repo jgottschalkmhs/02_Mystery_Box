@@ -47,13 +47,13 @@ class Game:
         self.game_frame = Frame(self.game_box)
         self.game_frame.grid()
 
-        #Heading Row
+        # Heading Row
         self.heading_label = Label(self.game_frame, text="Heading",
                                    font="Arial 24 bold", padx=10,
                                    pady=10)
         self.heading_label.grid(row=0)
 
-        #Balance Label
+        # Balance Label
         self.balance_frame = Frame(self.game_frame)
         self.balance_frame.grid(row=1)
 
@@ -68,13 +68,13 @@ class Game:
         # retrieval the balance from the initial function
         current_balance = self.balance.get()
 
-        #adjust balance
+        # adjust balance
         current_balance +=2
 
-        #set balance to new balance
+        # set balance to new balance
         self.balance.set(current_balance)
 
-        #Edit label so user can see balance
+        # Edit label so user can see balance
         self.balance_label.configure(text="Balance: {}".format(current_balance))
 
 
