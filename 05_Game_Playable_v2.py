@@ -24,6 +24,7 @@ class Start:
 
         # hide start up window
         self.start_frame.destroy()
+        Game(self, stakes, starting_balance)
 
 
 class Game:
@@ -130,6 +131,8 @@ class Game:
         round_winnings = 0
         prizes = []
         backgrounds = []
+        stats_prizes= []
+        
         for thing in range(0, 3):
             prize_num = random.randint(1, 100)
 

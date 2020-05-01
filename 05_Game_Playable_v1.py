@@ -124,7 +124,8 @@ class Game:
 
         round_winnings = 0
         prizes = []
-        backgrounds = []
+        backgrounds= []
+
         for thing in range(0, 3):
             prize_num = random.randint(1, 100)
 
