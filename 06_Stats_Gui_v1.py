@@ -297,6 +297,21 @@ class Game:
                                   command=self.to_quit, padx=10, pady=10)
         self.quit_button.grid(row=6, pady=10)
 
+        self.game_frame = Frame(pady=10, padx=10)
+        self.game_frame.grid()
+
+        # Formatting variables
+        self.game_stats_list = [50, 6]
+
+        # In actual program this is blank and is filled with calculations
+        self.round_stats_list = []
+
+        self.stats_label = Label(self.game_frame, text="Game stats",
+                                 font="Arial 14", padx=10, pady=10,
+                                 command=lambda: self.to_stats(self.round_stats_list))
+
+    def to_stats(self, game history, game stats):
+
     def reveal_boxes(self):
 
         current_balance = self.balance.get()
