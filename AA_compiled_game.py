@@ -568,7 +568,7 @@ class Export:
                                  font="Arial 10 italic", wrap=225, padx=10, pady=10)
         self.export_text.grid(row=2, pady=10)
 
-        self.filename_entry = Entry(self.export_frame, width=20,
+        self.filename_entry = Entry(self.export_frame, width=20, bg="#ffffff",
                                     font="Arial 14 bold", justify=CENTER)
         self.filename_entry.grid(row=3, pady=10)
 
@@ -603,15 +603,15 @@ class Export:
 
             elif letter == " ":
                 problem = "(no spaces allowed)"
-                has_error = "yes"
 
             elif letter == ".":
                 problem = "(no .'s allowed)"
-                has_error = "yes"
 
             else:
                 problem = "(the filename you chose is not valid)"
-                has_error = "yes"
+
+            has_error = "yes"
+            break
 
         if filename == "":
             problem = "can't be blank"
@@ -620,6 +620,7 @@ class Export:
         if has_error == "yes":
             self.filename_entry.config(bg="#ffafaf")
             self.save_error_label.config(text=problem)
+            print("Houston we have a problem")
 
         else:
             # If there are no errors, generate text file and then close dialogue
@@ -645,7 +646,7 @@ class Export:
 
             f.close()
 
-        self.close_export(partner)
+            self.close_export(partner)
 
     def close_export(self, partner):
         partner.export_btn.config(state=NORMAL)
